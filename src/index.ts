@@ -1,21 +1,5 @@
-import dotenv from 'dotenv';
-import { OpenAI } from 'openai';
-dotenv.config();
+import app from './app';
 
-const client = new OpenAI({
-  apiKey: process.env.OPEN_AI_API_KEY,
+app.listen(3000, () => {
+  console.log('Server is running on port 3000')
 })
-
-async function generateText() {
-  const completion = await client.chat.completions.create({
-    model: "gpt-4o-mini",
-    max_completion_tokens: 100,
-    messages: [{
-      role: "user",
-      content: "Hello, how are you?"
-    }]
-  })
-  console.log(completion.choices[0].message.content)
-}
-
-generateText()
