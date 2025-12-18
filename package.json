@@ -4,7 +4,7 @@
   "description": "Project integrating node with Artificial Intelligence",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx watch src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -20,11 +20,14 @@
   "homepage": "https://github.com/Alemoretti/node-ai#readme",
   "dependencies": {
     "dotenv": "^17.2.3",
+    "express": "^5.2.1",
     "openai": "^6.10.0",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "zod": "^4.2.1"
   },
   "devDependencies": {
+    "@types/express": "^5.0.6",
     "@types/node": "^25.0.1"
   }
 }
