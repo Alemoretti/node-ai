@@ -1,5 +1,21 @@
 import dotenv from 'dotenv';
-
+import { OpenAI } from 'openai';
 dotenv.config();
 
-console.log(process.env.OPEN_AI_API_KEY);
+const client = new OpenAI({
+  apiKey: process.env.OPEN_AI_API_KEY,
+})
+
+async function generateText() {
+  const completion = await client.chat.completions.create({
+    model: "gpt-4o-mini",
+    max_completion_tokens: 100,
+    messages: [{
+      role: "user",
+      content: "Hello, how are you?"
+    }]
+  })
+  console.log(completion.choices[0].message.content)
+}
+
+generateText()
