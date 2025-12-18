@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Alemoretti/node-ai#readme",
   "dependencies": {
     "dotenv": "^17.2.3",
+    "openai": "^6.10.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
